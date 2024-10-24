@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Campaign</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background:linear-gradient(135deg, #ff5f6d, #ffc371);
+            color: rgb(255, 255, 255);
+        }
+        .navbar {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        }
+        .navbar a {
+            color: white;
+            margin-left: 15px;
+        }
+        .navbar-brand {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #ff4081;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        .cta-button:hover {
+            background-color: #ff1a75;
+        }
+        .arrow-icon {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        .collapse.show + .cta-button .arrow-icon {
+            transform: rotate(180deg);
+        }
+        .hero img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+        }
+        .learn-more-section {
+            margin-top: 10px; /* Reduced gap */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1rem; /* Increased font size */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">BEINS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('form') }}">Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('form') }}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="left-content">
+            <h1>Welcome to BEINS</h1>
+            <p>Your gateway to smart and informed stock market investments.</p>
+            <a class="cta-button" data-bs-toggle="collapse" href="#learnMoreContent" role="button" aria-expanded="false" aria-controls="learnMoreContent">
+                Learn More
+                <span class="arrow-icon">&#9660;</span>
+            </a>
+        </div>
+        <div class="right-content">
+            <img src="{{ url_for('static', filename='images/file.png') }}" alt="Stock Market Illustration">
+
+
+        </div>
+    </section>
+
+    <!-- Collapsible Learn More Section -->
+    <div class="container">
+        <div id="learnMoreContent" class="collapse learn-more-section">
+            <h2>About the Stock Market</h2>
+            <p>The stock market is a collection of markets where stocks (pieces of ownership in businesses) are bought and sold. It serves as a platform for companies to raise capital and for investors to make profits based on market performance. The two main stock exchanges in India are the Bombay Stock Exchange (BSE) and the National Stock Exchange (NSE).</p>
+            <p>Investing in stocks allows individuals to participate in the growth of companies, and it's a significant driver of the economy. Investors can purchase shares directly, participate in mutual funds, or explore other investment instruments tied to stocks. The market's performance is often measured using indices like the Sensex (BSE) and Nifty 50 (NSE), which track the performance of top companies.</p>
+            <p>Before investing, it's essential to understand the risks associated with the stock market, as prices can be volatile and influenced by various factors, including economic conditions, company performance, and geopolitical events. Diversifying investments and doing thorough research can help mitigate risks and maximize potential returns.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BEINS. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
